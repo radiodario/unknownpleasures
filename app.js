@@ -1041,6 +1041,12 @@ var getUserMedia = require('getusermedia');
 
 var h = window.innerHeight;
 var w = window.innerWidth;
+
+if (w > h) {
+  w = h * 3 / 4;
+  //w = h;
+}
+
 var resolution = 128;
 var verticalLines = 64;
 var startX = w * 0.2;
