@@ -1130,6 +1130,13 @@ function drawLine(points) {
 
 var time = 0;
 
+function saveSnap() {
+  var imgURI = canvas.toDataURL('image/png');
+  window.open(imgURI);
+}
+
+canvas.addEventListener('click', saveSnap);
+
 function drawScanLine(number) {
   var currentY = startY + (number * stepY);
   var currentX = startX;
