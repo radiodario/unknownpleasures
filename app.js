@@ -1060,6 +1060,7 @@ var stepY = (endY - startY)/verticalLines;
 
 var linecolor = "rgb(200, 200, 200)";
 var fillColor = "#000"
+var factor = 0.2
 
 var noise = new Simplex();
 
@@ -1091,7 +1092,7 @@ function handleCameraFrame() {
   var j = 0, all;
   for (var i = 0, l = pix.length; i < l; i += (4)) {
     var all = pix[i] + pix[i+1] + pix[i+2];
-    data[j++] = all/30;
+    data[j++] = -all/30;
   }
 }
 
@@ -1141,7 +1142,7 @@ function drawScanLine(number) {
 
   for (i = 0; i < resolution; i++) {
     currentX += stepX;
-    yState = currentY + (stepY * 0.1 * data[yIndex + i])
+    yState = currentY - (stepY * factor * data[yIndex + i])
     points.push([currentX, yState])
   }
 
