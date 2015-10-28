@@ -1169,7 +1169,8 @@ function drawScanLine(number) {
 
 function drawImage() {
   time += 0.01;
-  ctx.clearRect(0, 0, w, h);
+  ctx.fillStyle = "#000"
+  ctx.fillRect(0, 0, w, h);
   handleCameraFrame();
   for (var i = 0; i < verticalLines; i++) {
     drawScanLine(i);
