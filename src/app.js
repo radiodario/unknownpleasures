@@ -58,9 +58,6 @@ function handleCameraFrame() {
   }
 }
 
-
-
-
 function drawFill(points) {
   ctx.fillStyle = fillColor;
   ctx.strokeStyle = fillColor;
