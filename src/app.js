@@ -1,3 +1,7 @@
+var host = "radiodario.github.io";
+if ((host == window.location.host) && (window.location.protocol != "https:"))
+    window.location.protocol = "https";
+
 var Simplex = require('simplex-noise');
 var getUserMedia = require('getusermedia');
 
