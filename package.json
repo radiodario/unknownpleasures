@@ -4,7 +4,7 @@
   "description": "a rendition of the unknown pleasures ",
   "scripts": {
     "start": "grunt server",
-    "ghpages": "grunt ghpages"
+    "ghpages": "grunt gh-pages"
   },
   "homepage": "http://github.com/radiodario/unknownpleasures",
   "bugs": "http://github.com/radiodario/unknownpleasures/issues",
