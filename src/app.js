@@ -35,6 +35,7 @@ canvas.width = w;
 var ctx = canvas.getContext('2d');
 var vid = document.createElement('video');
 vid.setAttribute('autoplay', true);
+vid.setAttribute('playsinline', "");
 var vidCan = document.createElement('canvas');
 vidCan.width = resolution;
 vidCan.height = verticalLines;
