@@ -3,7 +3,6 @@ if ((host == window.location.host) && (window.location.protocol != "https:"))
     window.location.protocol = "https";
 
 var Simplex = require('simplex-noise');
-var getUserMedia = require('getusermedia');
 
 var h = window.innerHeight;
 var w = window.innerWidth;
@@ -141,10 +140,11 @@ function drawImage() {
   requestAnimationFrame(drawImage);
 }
 
-getUserMedia({video: true, audio: false}, function(err, stream) {
-  vid.src = window.URL.createObjectURL(stream);
-})
-
-
+navigator.mediaDevices.getUserMedia({video: true, audio: false}).then(stream => {
+  vid.srcObject = stream;
+  vid.onloadedmetadata = () => {
+    vid.play();
+  };
+}).catch(console.error)
 
 drawImage();
