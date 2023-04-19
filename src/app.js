@@ -35,7 +35,8 @@ canvas.width = w;
 var ctx = canvas.getContext('2d');
 var vid = document.createElement('video');
 vid.setAttribute('autoplay', true);
-vid.setAttribute('playsinline', "");
+vid.setAttribute('playsinline', true);
+vid.setAttribute('webkit-playsinline', true);
 var vidCan = document.createElement('canvas');
 vidCan.width = resolution;
 vidCan.height = verticalLines;
@@ -116,18 +117,18 @@ function drawScanLine(number) {
     points.push([currentX, yState])
   }
 
-  //while (currentX < endX) {
+  // while (currentX < endX) {
   // t += stepT;
   //  mult = Math.sin(t) ;
   //  currentX += stepX;
   //  spike = Math.sin(t/2) * noise.noise2D(currentX+time, currentY+time) * 50;
   //  yState -= mult;
   //  points.push([currentX, yState-Math.abs(spike)]);
-  //}
+  // }
 
   drawFill(points);
   drawLine(points);
-  //ctx.putImageData(vidImg, 0, 0)
+  // ctx.putImageData(vidImg, 0, 0)
 }
 
 function drawImage() {
